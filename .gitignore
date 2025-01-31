@@ -1,0 +1,12 @@
+# Ignore .terraform directory
+.terraform/
+
+# Ignore Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Ignore .terraform.lock.hcl (optional, but recommended if not shared)
+.terraform.lock.hcl
+
+#local Files
+.a.sh
