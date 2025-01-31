@@ -7,3 +7,6 @@
 
 # Ignore .terraform.lock.hcl (optional, but recommended if not shared)
 .terraform.lock.hcl
+
+#local Files
+.a.sh
