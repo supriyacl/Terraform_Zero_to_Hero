@@ -10,3 +10,8 @@ variable "instance_tenancy" {
 variable "vpc_name" {
   description = "Define VPC Name of the AWS Cloud"
 }
+
+
+variable "igw_name" {
+  description = "This is name given for igw"
+}

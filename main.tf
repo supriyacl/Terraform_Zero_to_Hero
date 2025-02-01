@@ -14,7 +14,7 @@ provider "aws" {
 # Configure the backend with S3 and DynamoDB
 terraform {
   backend "s3" {
-    bucket         = "tf-state-fil-storage-20125"                             # Hardcoded bucket name
+    bucket         = "tf-state-fil-storage-20225"                             # Hardcoded bucket name
     key            = "modules/tfstate/terraform.tfstate"                      # Path to the state file in the bucket
     region         = "us-east-1"                                              # Region for S3 and DynamoDB
     dynamodb_table = "tf-state-lock"                                          # Hardcoded DynamoDB table name
@@ -28,4 +28,10 @@ module "vpc" {
   cidr_block        = var.cidr_block
   instance_tenancy  = var.instance_tenancy
   vpc_name = var.vpc_name
+}
+
+module "igw" {
+  source = "./modules/igw"
+  vpc_id = module.vpc.vpc_id
+  igw_name = var.igw_name
 }
